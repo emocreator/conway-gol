@@ -1,14 +1,40 @@
-# conway-gol
+# Conway's Game of Life
 
 This is an implementation of Conway's Game of Life in C. The game is a cellular automaton, which evolves over time according to a simple set of rules. The Game of Life is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.
 
-## Files
+## Overview
 
-conway.h: Header file containing function prototypes and the conway struct.
+The Game of Life is a zero-player game where cells on a grid evolve according to a set of rules. The implementation here allows configuring the grid size, seeding initial state, running simulations and displaying the results.
 
-conway.c: Source file implementing the functions for the Game of Life.
+The key files are:
 
-## Usage
+- main.c - Main program 
+- conway.c - Implements Conway logic
+- conway.h - Header file for Conway ADT
+- run.bat - Compiles and runs the program
 
+## Implementation
 
-Include the conway.h header file in your project. Compile the conway.c source file along with your project. Create a conway struct and initialize it using conway_init. Seed the initial state using conway_seed or conway_seedTable. Simulate the Game of Life using conway_simulate or conway_simulateN.  Print the current state of the Game of Life using conway_print. When you are done, clean up the resources using conway_destroy.
+The `conway` ADT encapsulates the state and logic for the simulation. The key methods are:
+
+- `conway_init` - Initialize grid 
+- `conway_seed` - Set initial state  
+- `conway_simulate` - Run one iteration of the simulation
+- `conway_print` - Print current grid state
+
+The main program initializes a Conway grid, seeds it, runs simulations and prints output.
+
+## Running 
+
+To compile and run:
+
+```
+run.bat
+```
+
+This will:
+
+1. Compile main.c and conway.c into a.exe
+2. Run the executable
+
+The output will show the grid evolving over generations.
